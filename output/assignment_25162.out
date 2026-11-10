@@ -1,0 +1,109 @@
+=== Job info ===
+Tue Nov 10 02:46:55 PM EST 2026
+User: gyoung22
+Running on: gal-c2.charlotte.edu
+SLURM_JOB_ID: 25162
+Workdir: /users/gyoung22/assignment5/assignment5
+
+=== Modules ===
+
+=== Run ===
+g++ -std=c++17 -Wall -Wextra -O2 -pthread -fopenmp -c main.cpp -o build/main.o
+g++ -std=c++17 -Wall -Wextra -O2 -pthread -fopenmp -c stack.cpp -o build/stack.o
+g++ -std=c++17 -Wall -Wextra -O2 -pthread -fopenmp -c queue.cpp -o build/queue.o
+g++ -std=c++17 -Wall -Wextra -O2 -pthread -fopenmp -c queue_factory.cpp -o build/queue_factory.o
+g++ -std=c++17 -Wall -Wextra -O2 -pthread -fopenmp -o build/main build/main.o build/stack.o build/stack_factory.o build/queue.o build/queue_factory.o
+Initialized benchmark results file: benchmark_25162.csv
+==========================================================
+ Starting Stack Sweep (Impls: mutex treiber elimination)
+ Ops: 1000000 | Threads: 1 2 4 8 16 32
+==========================================================
+[RUN] Stack | mutex       | push_heavy |  1 threads | 1000000 ops ... 42.3302 ms (23623795.78 ops/sec)
+[RUN] Stack | mutex       | push_heavy |  2 threads | 1000000 ops ... 98.8907 ms (10112174.35 ops/sec)
+[RUN] Stack | mutex       | push_heavy |  4 threads | 1000000 ops ... 251.151 ms (3981668.40 ops/sec)
+[RUN] Stack | mutex       | push_heavy |  8 threads | 1000000 ops ... 353.433 ms (2829390.58 ops/sec)
+[RUN] Stack | mutex       | push_heavy | 16 threads | 1000000 ops ... 564.781 ms (1770597.81 ops/sec)
+[RUN] Stack | mutex       | push_heavy | 32 threads | 1000000 ops ... 871.691 ms (1147195.51 ops/sec)
+[RUN] Stack | mutex       | balanced   |  1 threads | 1000000 ops ... 35.0152 ms (28559025.79 ops/sec)
+[RUN] Stack | mutex       | balanced   |  2 threads | 1000000 ops ... 94.8328 ms (10544874.77 ops/sec)
+[RUN] Stack | mutex       | balanced   |  4 threads | 1000000 ops ... 259.717 ms (3850344.80 ops/sec)
+[RUN] Stack | mutex       | balanced   |  8 threads | 1000000 ops ... 391.742 ms (2552700.50 ops/sec)
+[RUN] Stack | mutex       | balanced   | 16 threads | 1000000 ops ... 680.475 ms (1469561.70 ops/sec)
+[RUN] Stack | mutex       | balanced   | 32 threads | 1000000 ops ... 958.734 ms (1043042.18 ops/sec)
+[RUN] Stack | mutex       | pop_heavy  |  1 threads | 1000000 ops ... 23.1846 ms (43132079.05 ops/sec)
+[RUN] Stack | mutex       | pop_heavy  |  2 threads | 1000000 ops ... 83.6086 ms (11960492.10 ops/sec)
+[RUN] Stack | mutex       | pop_heavy  |  4 threads | 1000000 ops ... 198.374 ms (5040983.19 ops/sec)
+[RUN] Stack | mutex       | pop_heavy  |  8 threads | 1000000 ops ... 321.581 ms (3109636.45 ops/sec)
+[RUN] Stack | mutex       | pop_heavy  | 16 threads | 1000000 ops ... 533.394 ms (1874786.74 ops/sec)
+[RUN] Stack | mutex       | pop_heavy  | 32 threads | 1000000 ops ... 865.861 ms (1154919.79 ops/sec)
+[RUN] Stack | treiber     | push_heavy |  1 threads | 1000000 ops ... 38.0443 ms (26285146.53 ops/sec)
+[RUN] Stack | treiber     | push_heavy |  2 threads | 1000000 ops ... 78.5636 ms (12728540.95 ops/sec)
+[RUN] Stack | treiber     | push_heavy |  4 threads | 1000000 ops ... 147.659 ms (6772360.64 ops/sec)
+[RUN] Stack | treiber     | push_heavy |  8 threads | 1000000 ops ... 205.16 ms (4874244.49 ops/sec)
+[RUN] Stack | treiber     | push_heavy | 16 threads | 1000000 ops ... 239.198 ms (4180636.96 ops/sec)
+[RUN] Stack | treiber     | push_heavy | 32 threads | 1000000 ops ... 321.207 ms (3113257.18 ops/sec)
+[RUN] Stack | treiber     | balanced   |  1 threads | 1000000 ops ... 29.8029 ms (33553781.68 ops/sec)
+[RUN] Stack | treiber     | balanced   |  2 threads | 1000000 ops ... 71.5194 ms (13982220.21 ops/sec)
+[RUN] Stack | treiber     | balanced   |  4 threads | 1000000 ops ... 173.835 ms (5752581.47 ops/sec)
+[RUN] Stack | treiber     | balanced   |  8 threads | 1000000 ops ... 197.23 ms (5070222.58 ops/sec)
+[RUN] Stack | treiber     | balanced   | 16 threads | 1000000 ops ... 253.101 ms (3950991.90 ops/sec)
+[RUN] Stack | treiber     | balanced   | 32 threads | 1000000 ops ... 331.988 ms (3012157.07 ops/sec)
+[RUN] Stack | treiber     | pop_heavy  |  1 threads | 1000000 ops ... 15.9029 ms (62881612.79 ops/sec)
+[RUN] Stack | treiber     | pop_heavy  |  2 threads | 1000000 ops ... 30.7714 ms (32497708.91 ops/sec)
+[RUN] Stack | treiber     | pop_heavy  |  4 threads | 1000000 ops ... 69.6558 ms (14356306.29 ops/sec)
+[RUN] Stack | treiber     | pop_heavy  |  8 threads | 1000000 ops ... 87.1447 ms (11475167.16 ops/sec)
+[RUN] Stack | treiber     | pop_heavy  | 16 threads | 1000000 ops ... 102.021 ms (9801903.53 ops/sec)
+[RUN] Stack | treiber     | pop_heavy  | 32 threads | 1000000 ops ... 144.236 ms (6933081.89 ops/sec)
+[RUN] Stack | elimination | push_heavy |  1 threads | 1000000 ops ... 37.9391 ms (26358031.69 ops/sec)
+[RUN] Stack | elimination | push_heavy |  2 threads | 1000000 ops ... 65.379 ms (15295431.25 ops/sec)
+[RUN] Stack | elimination | push_heavy |  4 threads | 1000000 ops ... 179.59 ms (5568238.77 ops/sec)
+[RUN] Stack | elimination | push_heavy |  8 threads | 1000000 ops ... 268.016 ms (3731120.53 ops/sec)
+[RUN] Stack | elimination | push_heavy | 16 threads | 1000000 ops ... 302.165 ms (3309450.13 ops/sec)
+[RUN] Stack | elimination | push_heavy | 32 threads | 1000000 ops ... 383.885 ms (2604946.79 ops/sec)
+[RUN] Stack | elimination | balanced   |  1 threads | 1000000 ops ... 31.1672 ms (32085012.45 ops/sec)
+[RUN] Stack | elimination | balanced   |  2 threads | 1000000 ops ... 57.7714 ms (17309603.02 ops/sec)
+[RUN] Stack | elimination | balanced   |  4 threads | 1000000 ops ... 190.853 ms (5239634.69 ops/sec)
+[RUN] Stack | elimination | balanced   |  8 threads | 1000000 ops ... 270.444 ms (3697623.17 ops/sec)
+[RUN] Stack | elimination | balanced   | 16 threads | 1000000 ops ... 332.988 ms (3003111.22 ops/sec)
+[RUN] Stack | elimination | balanced   | 32 threads | 1000000 ops ... 401.985 ms (2487655.01 ops/sec)
+[RUN] Stack | elimination | pop_heavy  |  1 threads | 1000000 ops ... 15.9161 ms (62829461.99 ops/sec)
+[RUN] Stack | elimination | pop_heavy  |  2 threads | 1000000 ops ... 24.335 ms (41093075.82 ops/sec)
+[RUN] Stack | elimination | pop_heavy  |  4 threads | 1000000 ops ... 95.7193 ms (10447213.88 ops/sec)
+[RUN] Stack | elimination | pop_heavy  |  8 threads | 1000000 ops ... 120.11 ms (8325701.44 ops/sec)
+[RUN] Stack | elimination | pop_heavy  | 16 threads | 1000000 ops ... 144.976 ms (6897693.41 ops/sec)
+[RUN] Stack | elimination | pop_heavy  | 32 threads | 1000000 ops ... 178.868 ms (5590714.94 ops/sec)
+==========================================================
+ Starting Queue Sweep (Impls: mutex ms)
+ Ops: 1000000 | Threads: 1 2 4 8 16 32
+==========================================================
+[RUN] Queue | mutex       | mp_mc      |  1 threads | 1000000 ops ... 34.3024 ms (29152479.13 ops/sec)
+[RUN] Queue | mutex       | mp_mc      |  2 threads | 1000000 ops ... 101.716 ms (9831294.98 ops/sec)
+[RUN] Queue | mutex       | mp_mc      |  4 threads | 1000000 ops ... 324.516 ms (3081512.16 ops/sec)
+[RUN] Queue | mutex       | mp_mc      |  8 threads | 1000000 ops ... 545.179 ms (1834259.94 ops/sec)
+[RUN] Queue | mutex       | mp_mc      | 16 threads | 1000000 ops ... 764.312 ms (1308366.22 ops/sec)
+[RUN] Queue | mutex       | mp_mc      | 32 threads | 1000000 ops ... 1100.68 ms (908529.27 ops/sec)
+[RUN] Queue | mutex       | pc_split   |  1 threads | 1000000 ops ... 46.9217 ms (21312100.80 ops/sec)
+[RUN] Queue | mutex       | pc_split   |  2 threads | 1000000 ops ... 72.3968 ms (13812765.21 ops/sec)
+[RUN] Queue | mutex       | pc_split   |  4 threads | 1000000 ops ... 260.641 ms (3836694.92 ops/sec)
+[RUN] Queue | mutex       | pc_split   |  8 threads | 1000000 ops ... 402.907 ms (2481962.34 ops/sec)
+[RUN] Queue | mutex       | pc_split   | 16 threads | 1000000 ops ... 558.249 ms (1791315.34 ops/sec)
+[RUN] Queue | mutex       | pc_split   | 32 threads | 1000000 ops ... 772.894 ms (1293838.48 ops/sec)
+[RUN] Queue | ms          | mp_mc      |  1 threads | 1000000 ops ... 31.1876 ms (32064025.45 ops/sec)
+[RUN] Queue | ms          | mp_mc      |  2 threads | 1000000 ops ... 81.2588 ms (12306359.43 ops/sec)
+[RUN] Queue | ms          | mp_mc      |  4 threads | 1000000 ops ... 207.354 ms (4822670.41 ops/sec)
+[RUN] Queue | ms          | mp_mc      |  8 threads | 1000000 ops ... 262.472 ms (3809930.20 ops/sec)
+[RUN] Queue | ms          | mp_mc      | 16 threads | 1000000 ops ... 275.189 ms (3633866.18 ops/sec)
+[RUN] Queue | ms          | mp_mc      | 32 threads | 1000000 ops ... 390.633 ms (2559947.57 ops/sec)
+[RUN] Queue | ms          | pc_split   |  1 threads | 1000000 ops ... 43.0403 ms (23234038.80 ops/sec)
+[RUN] Queue | ms          | pc_split   |  2 threads | 1000000 ops ... 37.4511 ms (26701485.40 ops/sec)
+[RUN] Queue | ms          | pc_split   |  4 threads | 1000000 ops ... 138.326 ms (7229298.90 ops/sec)
+[RUN] Queue | ms          | pc_split   |  8 threads | 1000000 ops ... 165.536 ms (6040982.02 ops/sec)
+[RUN] Queue | ms          | pc_split   | 16 threads | 1000000 ops ... 212.072 ms (4715379.68 ops/sec)
+[RUN] Queue | ms          | pc_split   | 32 threads | 1000000 ops ... 285.086 ms (3507713.46 ops/sec)
+==========================================================
+ Full Benchmark Sweep Complete!
+ Results saved to: benchmark_25162.csv
+==========================================================
+
+=== Done ===
+Tue Nov 10 02:47:19 PM EST 2026
